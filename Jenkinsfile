@@ -17,6 +17,13 @@ pipeline {
                 docker push $REGISTRY_URL/$IMAGE_NAME:$IMAGE_TAG
                  '''
             }
+            post {
+                always {
+                    sh '''
+                    docker image prune -f --filter "label=app=bot"
+                    '''
+                 }
+            }
         }
         stage('Stage II') {
             steps {
