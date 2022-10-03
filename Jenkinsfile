@@ -20,7 +20,7 @@ pipeline {
             post {
                 always {
                     sh '''
-                    docker image prune --force --filter="label=app=bot"
+                    docker rmi 352708296901.dkr.ecr.eu-west-1.amazonaws.com/ddady-jenkins-rep:0.0.10
                     '''
                  }
             }
