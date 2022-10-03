@@ -20,7 +20,7 @@ pipeline {
             post {
                 always {
                     sh '''
-                    docker image prune -f --filter "label=appbot"
+                    docker image prune --force --filter "label=app=bot"
                     '''
                  }
             }
