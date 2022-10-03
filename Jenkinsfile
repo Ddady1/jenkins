@@ -20,7 +20,7 @@ pipeline {
             post {
                 always {
                     sh '''
-                    docker rmi 352708296901.dkr.ecr.eu-west-1.amazonaws.com/ddady-jenkins-rep:0.0.10
+                    docker rmi $IMAGE_NAME $REGISTRY_URL/$IMAGE_NAME:$IMAGE_TAG
                     '''
                  }
             }
