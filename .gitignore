@@ -9,6 +9,7 @@ __pycache__/
 *.so
 
 .telegramToken
+.telegram_jenkins_token
 
 # ignore .pem file
 *.pem

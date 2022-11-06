@@ -25,15 +25,10 @@ pipeline {
                  }
             }
         }
-        stage('Stage II') {
-            steps {
-                sh 'echo "stage II...Done3"'
-            }
-        }
-        stage('Stage III ...') {
-            steps {
-                sh 'echo echo "stage III..."'
-            }
-        }
+        stage('Trigger Deploy') {
+    steps {
+        build job: 'BotDeploy', wait: false, parameters: [
+            string(name: 'BOT_IMAGE_NAME', value: "${REGISTRY_URL}/${IMAGE_NAME}:${IMAGE_TAG}")
+        ]
     }
 }
