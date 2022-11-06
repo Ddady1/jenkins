@@ -22,14 +22,15 @@ pipeline {
                     sh '''
                     docker rmi $IMAGE_NAME $REGISTRY_URL/$IMAGE_NAME:$IMAGE_TAG
                     '''
-                 }
-            }
+                    }
+                }
         }
         stage('Trigger Deploy') {
-    steps {
+            steps {
         build job: 'BotDeploy', wait: false, parameters: [
             string(name: 'BOT_IMAGE_NAME', value: "${REGISTRY_URL}/${IMAGE_NAME}:${IMAGE_TAG}")
         ]
+                  }
+        }
     }
-}
 }
