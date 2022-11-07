@@ -8,7 +8,7 @@ pipeline {
     }
 
     stages {
-        stage('Build1') {
+        stage('Build') {
             steps {
                 sh '''
                 aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin $REGISTRY_URL
