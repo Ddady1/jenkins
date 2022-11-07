@@ -19,6 +19,13 @@ pipeline {
             }
 
         }
+        post {
+            always {
+                sh '''
+                docker rmi $IMAGE_NAME $REGISTRY_URL/$IMAGE_NAME:$IMAGE_TAG
+                '''
+            }
+        }
 
 
     }
