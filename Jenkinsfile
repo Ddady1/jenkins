@@ -5,7 +5,7 @@ pipeline {
 //        REGISTRY_URL = "352708296901.dkr.ecr.eu-west-1.amazonaws.com"
 //        IMAGE_TAG = "0.0.$BUILD_NUMBER"
 //        IMAGE_NAME = "ddady-jenkins-rep"
-    }
+//    }
 
     stages {
         stage('Build') {
